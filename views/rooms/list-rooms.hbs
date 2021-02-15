@@ -1,0 +1,19 @@
+<h2>Rooms</h2>
+
+{{#each roomsInDB}}
+<p>{{name}}</p>
+
+<a href="/rooms/{{_id}}">See details</a>
+
+<form action="/delete/{{_id}}" method="POST">
+<button>Delete</button>
+</form>
+
+{{/each}}
+
+
+
+
+
+
+

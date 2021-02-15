@@ -1,0 +1,27 @@
+{{#if userInSession}}
+<h3>Hello {{userInSession.fullName}}, let´s create a room!</h1>
+
+<form action="/rooms/create" method="POST">
+
+<label for="-name-input">Name:</label>
+<input type="text" name="name" id="name-input" placeholder="name of the room"/>
+
+<label for="-description-input">Description:</label>
+<input type="text" name="description" id="description-input" placeholder="description of the room"/>
+
+<label for="-imageURL-input">Image:</label>
+<input type="text" name="imageUrl" id="description-input" placeholder="url"/>
+
+<button type="submit">Create a new Room</button>
+
+</form>
+
+{{/if}}
+
+{{#unless userInSession}}
+<h2>Login or signup to create rooms</h2>
+{{/unless}}
+
+/*faltan 
+owner: { type: Schema.Types.ObjectId, ref: 'User' },
+reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' } ]*/
